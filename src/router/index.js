@@ -19,7 +19,7 @@ export default new Router({
       component: addblog
     },
     {
-      path: '/singleblog/:id',
+      path: '/singleblog',
       name: 'singleblog',
       component: singleblog
     },
