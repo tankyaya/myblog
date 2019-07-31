@@ -3,13 +3,13 @@
     <h1>博客总览</h1>
     <input type="text" v-model="search" placeholder="search">
     <!-- list in comeout是便利computed方法中经过过滤之后的数组 -->
-     <div class="connent" v-for="list in comeout">
-       <router-link v-bind:to="'/single/'+list.id">
+     <div class="connent" v-for="list in comeout" @click="toDetail(list.id)">
+          <router-link :to="{name:'singleblog',params:{name:'${list.id}'}}">
           <h2>{{list.title}}</h2>
-          </router-link>
           <article>
             {{list.content | cut}}
           </article>
+          </router-link>
       </div>
   </div>
 </template>
@@ -26,7 +26,7 @@
     created:function(){
       var that = this;
       that.axios.get('/show').then(res => {
-        // /console.log(res.data);
+        console.log(res.data);
         that.lists = res.data;
         })
       .catch(err => {console.log(err)})
@@ -40,6 +40,17 @@
          return this.lists.filter((list) =>{
            return list.title.match(this.search);
          })
+       }
+     },
+     methods:{
+       toDetail:function(id){
+         this.$router.push({
+           path:'/single',
+           query:{
+             id:id
+           }
+         });
+         console.log(id);
        }
      }
   }

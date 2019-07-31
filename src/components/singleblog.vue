@@ -1,7 +1,8 @@
 <template>
   <div id="singleblog">
-      <h1>{{blog.title}}</h1>
-      <article>{{blog.body}}</article>
+      <p>{{this.$route.params.name}}</p>
+     <!-- <h1>{{blog.title}}</h1>
+      <article>{{blog.body}}</article> -->
   </div>
 </template>
 
@@ -10,15 +11,14 @@
     name:'singleblog',
     data(){
       return {
-          id:this.$route.params.id,
           blog:{}
       }
-    },
-    created:function(){
-        this.axios.get('/single'+this.id).then(res => {
-          console.log(res);
-        })
     }
+    // mounted:function(){
+    //     this.axios.get('/single?id='+this.id).then(res => {
+    //       console.log(res);
+    //     })
+    // }
   }
 </script>
 
