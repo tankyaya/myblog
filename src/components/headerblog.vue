@@ -2,7 +2,8 @@
   <nav>
     <ul>
       <li><router-link to="/showblog">博客总览</router-link>
-      <router-link to="/addblog">写博客</router-link></li>
+      <router-link to="/addblog">写博客</router-link>
+      <!-- <router-link to="/test">富文本编译</router-link> --></li>
     </ul>
    </nav>
 </template>

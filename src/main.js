@@ -5,7 +5,11 @@ import App from './App'
 import router from './router'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
+import VueKindEditor from 'vue-kindeditor'
+import 'kindeditor/kindeditor-all-min.js'
+import 'kindeditor/themes/default/default.css'
 
+Vue.use(VueKindEditor)
 
 var instance = axios.create({
   baseURL:'http://127.0.0.1:3000',

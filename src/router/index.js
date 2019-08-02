@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import showblog from '@/components/showblog'
 import addblog from '@/components/addblog'
 import singleblog from '@/components/singleblog'
+import test from '@/components/test'
 
 Vue.use(Router)
 
@@ -19,11 +20,15 @@ export default new Router({
       component: addblog
     },
     {
-      path: '/singleblog/:id',
+      path: '/singleblog',
       name: 'singleblog',
       component: singleblog
     },
-
+    {
+      path:'/test',
+      name:'test',
+      component:test
+    }
   ],
   mode:'history'//去掉url中的#
 })

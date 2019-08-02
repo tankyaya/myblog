@@ -44,6 +44,7 @@
         var  item = this.blog;
         var that = this;
         var json = JSON.stringify(item);
+
           if(item.title!=""&&item.content!=""&&item.categories!=""&&item.author!=""){
             console.log(json);
             that.axios.post('/add',{item})
